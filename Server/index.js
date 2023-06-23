@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const noteRoutes = require('./routes/noteRoutes');
+const cors = require('cors');
 const app = express();
 require('dotenv').config();
 
@@ -19,6 +20,8 @@ mongoose.connect(
     });
 
 app.use(express.json());
+
+app.use(cors());
 
 // Use routes
 app.use('/notes', noteRoutes);

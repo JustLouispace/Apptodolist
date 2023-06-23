@@ -11,7 +11,7 @@ const NoteSchema = new Schema({
     enum: priorityEnum,
   },
   time: String,
-  dueDate: Date,
+  dueDate: String,
 });
 
 const NoteModel = mongoose.model('Note', NoteSchema);

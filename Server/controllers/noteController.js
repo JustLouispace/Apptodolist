@@ -4,6 +4,7 @@ const Note = require('../models/Note');
 const createNote = async (req, res) => {
   try {
     const { topic, message, priority, time, dueDate } = req.body;
+    console.log(req);
     const note = await Note.create({ topic, message, priority, time, dueDate });
     res.status(201).json(note);
   } catch (error) {
